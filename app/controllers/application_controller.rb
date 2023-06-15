@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/clients" do
-    clients = Client.all
+    clients = Client.all.order("last_name")
     clients.to_json
   end
 
