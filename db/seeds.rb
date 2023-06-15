@@ -10,4 +10,26 @@ puts "🌱 Seeding..."
   )
 end
 
+carriers = ["Lincoln", "Principal", "AIG", "Protective", "Banner", "John Hancock", "Prudential"]
+
+products = ["10YT", "15yt", "20yt", "30yt", "GUL", "IUL"]
+
+purposes = ["Personal", "Business"]
+
+rate_classes = ["Preferred Plus", "Preferred", "Standard Plus", "Standard", "Table B", "Table D"]
+
+20.times do
+  Policy.create(
+    carrier: carriers.sample,
+    product: products.sample,
+    policy_date: Faker::Date.between(from: '2000-01-01', to: '2020-12-31'),
+    policy_number: Faker::Number.number(digits: 10),
+    face_amount: Faker::Number.between(from: 100000, to: 5000000),
+    conversion_expiry: Faker::Date.between(from: '2023-6-14', to: '2040-01-01'),
+    purpose: purposes.sample,
+    rate_class: rate_classes.sample,
+    client_id: Client.all.sample.id
+  )
+end
+
 puts "✅ Done seeding!"
