@@ -12,9 +12,9 @@ class ApplicationController < Sinatra::Base
     policies.to_json
   end
   
-  get "/policies/:id" do
-    policy = Policy.find(params[:id])
-    policy.to_json(include: {client: { only: [:first_name, :last_name, :date_of_birth] }})
+  get "/clients/:id" do
+    policy = Client.find(params[:id])
+    policy.to_json(include: :policies)
   end
 
 end
