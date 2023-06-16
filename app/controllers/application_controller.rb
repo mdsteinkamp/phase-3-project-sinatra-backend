@@ -16,18 +16,5 @@ class ApplicationController < Sinatra::Base
     policy = Policy.find(params[:id])
     policy.to_json(include: {client: { only: [:first_name, :last_name, :date_of_birth] }})
   end
-  
-  get "/policies/:carrier" do
-    policies = Policy.where(carrier: params[:carrier])
-    policies.to_json
-  end
-
-  get "/clients/:last_name" do
-    client = Client.where(last_name: params[:last_name])
-    client.to_json
-  end
-
-
-
 
 end
