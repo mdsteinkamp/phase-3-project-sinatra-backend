@@ -14,6 +14,12 @@ class ApplicationController < Sinatra::Base
     policy.to_json(include: :policies)
   end
 
+  delete "/clients/:id" do
+    client = Client.find(params[:id])
+    client.destroy
+    client.to_json
+  end
+
   post '/clients' do
     client = Client.create(
       last_name: params[:last_name],
