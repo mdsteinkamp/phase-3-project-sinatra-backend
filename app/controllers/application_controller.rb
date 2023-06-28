@@ -31,4 +31,19 @@ class ApplicationController < Sinatra::Base
     client.to_json
   end
 
+  post '/policies' do
+    policy = Policy.create(
+      carrier: params[:carrier],
+      product: params[:product],
+      policy_date: params[:policy_date],
+      policy_number: params[:policy_number],
+      face_amount: params[:face_amount],
+      conversion_expiry: params[:conversion_expiry],
+      purpose: params[:purpose],
+      rate_class: params[:rate_class],
+      client_id: params[:client_id],
+    )
+    policy.to_json
+  end
+
 end
