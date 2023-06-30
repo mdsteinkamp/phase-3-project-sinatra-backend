@@ -42,6 +42,24 @@ class ApplicationController < Sinatra::Base
       purpose: params[:purpose],
       rate_class: params[:rate_class],
       client_id: params[:client_id],
+      active: params[:active],
+    )
+    policy.to_json
+  end
+
+  patch '/policies/:id' do
+    policy = Policy.find(params[:id])
+    policy.update(
+      carrier: params[:carrier],
+      product: params[:product],
+      policy_date: params[:policy_date],
+      policy_number: params[:policy_number],
+      face_amount: params[:face_amount],
+      conversion_expiry: params[:conversion_expiry],
+      purpose: params[:purpose],
+      rate_class: params[:rate_class],
+      client_id: params[:client_id],
+      active: params[:active],
     )
     policy.to_json
   end
