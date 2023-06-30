@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_15_031522) do
+ActiveRecord::Schema.define(version: 2023_06_30_003340) do
 
   create_table "clients", force: :cascade do |t|
     t.string "last_name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2023_06_15_031522) do
     t.string "purpose"
     t.string "rate_class"
     t.integer "client_id"
+    t.boolean "active"
   end
 
 end
