@@ -8,6 +8,11 @@ class ApplicationController < Sinatra::Base
     clients = Client.all.order("last_name")
     clients.to_json
   end
+
+  get "/policies" do
+    policies = Policy.all
+    policies.to_json
+  end
   
   get "/clients/:id" do
     policy = Client.find(params[:id])

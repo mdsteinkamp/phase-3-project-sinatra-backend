@@ -17,7 +17,7 @@ products = ["10YT", "15yt", "20yt", "30yt", "GUL", "IUL"]
 purposes = ["Personal", "Business"]
 
 rate_classes = ["Preferred Plus", "Preferred", "Standard Plus", "Standard", "Table B", "Table D"]
-is_active = [true, false]
+is_active = ["In Force", "Not In Force"]
 
 
 20.times do
