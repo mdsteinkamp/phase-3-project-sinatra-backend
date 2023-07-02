@@ -69,4 +69,9 @@ class ApplicationController < Sinatra::Base
     policy.to_json
   end
 
+  get '/insurancetotal' do
+    total = Policy.sum(:face_amount)
+    total.to_json
+  end
+
 end
