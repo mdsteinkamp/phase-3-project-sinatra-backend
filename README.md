@@ -11,7 +11,7 @@ Then pull the front end code at https://github.com/mdsteinkamp/phase-3-project-r
 
 * Schema - The database schema is set up with two tables: Clients and Policies with a One to Many association. 
 
-* Seed - the server is seeded via ```rake db:seed``` with calls to the Faker library for names and some arrays for policy info. 
+* Seed - the server is seeded via ```rake db:seed``` with calls to the Faker library for names & personal info and some arrays for policy info. 
 
 * A Ruby class is set up for each model with the required Active Record association
 
