@@ -6,17 +6,12 @@ class ApplicationController < Sinatra::Base
   # Add your routes here
   get "/clients" do
     clients = Client.all.order("last_name")
-    clients.to_json
+    clients.to_json(include: :policies)
   end
 
-  get "/policies" do
-    policies = Policy.all
-    policies.to_json
-  end
-  
   get "/clients/:id" do
     policy = Client.find(params[:id])
-    policy.to_json(include: :policies)
+    policy.to_json
   end
 
   delete "/clients/:id" do
@@ -33,7 +28,7 @@ class ApplicationController < Sinatra::Base
       state: params[:state],
       spouse_name: params[:spouse_name],
     )
-    client.to_json
+    client.to_json(include: :policies)
   end
 
   post '/policies' do
