@@ -17,7 +17,7 @@ products = ["10YT", "15yt", "20yt", "30yt", "GUL", "IUL"]
 purposes = ["Personal", "Business"]
 
 rate_classes = ["Preferred Plus", "Preferred", "Standard Plus", "Standard", "Table B", "Table D"]
-is_active = ["In Force", "Not In Force"]
+is_active = ["Active", "Lapsed"]
 
 
 20.times do
@@ -31,7 +31,7 @@ is_active = ["In Force", "Not In Force"]
     purpose: purposes.sample,
     rate_class: rate_classes.sample,
     client_id: Client.all.sample.id,
-    active: is_active.sample
+    status: is_active.sample
   )
 end
 
