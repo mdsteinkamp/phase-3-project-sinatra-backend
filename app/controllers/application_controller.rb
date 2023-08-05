@@ -42,7 +42,7 @@ class ApplicationController < Sinatra::Base
       purpose: params[:purpose],
       rate_class: params[:rate_class],
       client_id: params[:client_id],
-      active: params[:active],
+      status: params[:status],
     )
     policy.to_json
   end
@@ -59,7 +59,7 @@ class ApplicationController < Sinatra::Base
       purpose: params[:purpose],
       rate_class: params[:rate_class],
       client_id: params[:client_id],
-      active: params[:active],
+      status: params[:status],
     )
     policy.to_json
   end
