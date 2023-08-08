@@ -3,15 +3,9 @@ require 'pry'
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  # Add your routes here
   get "/clients" do
     clients = Client.all.order("last_name")
     clients.to_json(include: :policies)
-  end
-
-  get "/clients/:id" do
-    policy = Client.find(params[:id])
-    policy.to_json
   end
 
   delete "/clients/:id" do
