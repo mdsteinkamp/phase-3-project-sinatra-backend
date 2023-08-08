@@ -16,6 +16,7 @@ class ApplicationController < Sinatra::Base
 
   delete "/clients/:id" do
     client = Client.find(params[:id])
+    client.delete_all_policies
     client.destroy
     client.to_json
   end
